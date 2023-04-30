@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js" integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    nav div {
+  padding: 0.6em;
+  background: #e3e3e3;
+  display: none;
+  cursor: pointer;
+  color: #292929;
+  font-size: 24px;
+}
+
+ul {
+  margin: 0px;
+  padding: 0px;
+  background: #e3e3e3;
+  list-style-type: none;
+  position: relative;
+}
+
+ul li {
+  display: inline-block;
+}
+
+ul li a {
+  padding: 15px;
+  color: #292929;
+  text-decoration: none;
+  display: block;
+}
+
+ul li:hover {
+  background: lightgrey;
+}
+
+ul ul {
+  position: absolute;
+  min-width: auto;
+  background: lightgrey;
+  display: none;
+}
+
+ul ul li {
+  display: block;
+  background: #e3e3e3;
+}
+
+ul li:hover ul {
+  display: block;
+}
+
+@media (max-width: 768px) {
+  nav div {
+    display: block;
+  }
+  ul {
+    display: none;
+    position: static;
+    background: #e3e3e3;
+  }
+  ul li {
+    display: block;
+  }
+  ul ul {
+    position: static;
+    background: #e3e3e3;
+  }
+}
+</style>
+
+<body>
+    <nav>
+        <div>
+            <i class="material-icons">menu</i>
+        </div>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li>
+                <a href="#">Dropdown 1</a>
+            </li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">FAQ</a></li>
+        </ul>
+    </nav>
+
+</body>
+
+<script>
+
+    $(document).ready(function(){
+        $('nav div').click(function(){
+            $('ul').slideToggle();
+            // $('ul ul').class('display',"none")
+        })
+    })
+</script>
+</html>

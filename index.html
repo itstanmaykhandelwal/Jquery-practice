@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js" integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    #myDiv{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        align-self: center;
+        background-color: lightgreen;
+        padding: 50px 0;
+    }
+    .cssadd{
+        background-color: lightcyan;
+        padding: 10px 20px;
+        margin: 20px 0;
+    }
+
+    p{
+        font-size: 30px;
+        color: darkgreen;
+    }
+    .ancestors *{
+        display: block;
+        border: 2px solid grey;
+        color: lightblue;
+        padding: 5px;
+        margin: 15px;
+    }
+</style>
+
+<body>
+    <button>Click Me</button>
+
+    <div id="myDiv" class="classDiv">
+        this is my Id
+    </div>
+
+
+    <p>Welcome to JQUERY PRACTICE</p>
+
+    <input type="text" name="" id="">
+
+    <span id="focusid">Welcome</span>
+    <span id="blurid">Hello</span>
+
+    <ul>
+        <li>One</li>
+        <li>Two</li>
+    </ul>
+
+    <div id="box" >
+        <p>This is Element</p>
+        <p>This is Element</p>
+        <p>This is Element</p>
+    </div>
+
+
+    <div class="ancestors">
+        <div style="width: 500px;"> 
+            <ul>
+                <li>
+                    <span class="children">span</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+</body>
+
+<script>
+    // $(document).ready(function(){
+    //     $('button').click(function(){
+    //         $('.classDiv').toggle(1000)
+    //     })
+    // })
+
+    // $(document).ready(function(){
+    //     $('button').dblclick(function(){
+    //         $('.classDiv').toggle(1000)
+    //     })
+    // })
+
+    // $(document).ready(function(){
+    //     $('button').mouseenter(function(){
+    //         $('.classDiv').toggle(1000)
+    //     })
+    // })
+
+    // $(document).ready(function(){
+    //     $('input').keypress(function(){
+    //         alert("hello")
+    //         console.log("Hello")
+    //     })
+    // })
+
+    $(document).ready(function(){
+        // $('span').hide()
+
+        // $('input').focus(function(){
+        //     $('#focusid').show().fadeOut(3000);
+        // })
+
+        // $('input').blur(function(){
+        //     $('#blurid').show().fadeOut(3000);
+        // })
+
+
+        // $('p').on({
+        //     mouseenter:function(){
+        //         $(this).css('backgroundColor','red')
+        //     },
+        //     mouseleave:function(){
+        //         $(this).css('backgroundColor','yellow')
+        //     },
+        //     click:function(){
+        //         $('input').css('backgroundColor','pink')
+        //     }
+        // });
+
+
+        // $('input').on({
+        //     click:function(){
+        //         $('p').css('backgroundColor','pink')
+        //     }
+        // })
+
+        // $('button').click(function(){
+        //     $('ul').append('<li>Three</li>')
+        // }) 
+        // $('button').click(function(){
+        //     $('ul').prepend('<li>Three</li>')
+        // }) 
+
+        // $('button').click(function(){
+        //     $('.box').remove()
+        // })
+
+        // $('button').click(function(){
+        //     $('.box').empty()
+        // })
+
+        // $('button').click(function(){
+        //     $('#box').addClass('cssadd')
+        // })
+
+        // $('button').click(function(){
+        //     $('.children').parent().css({"color":"red", "border":"2px solid blue"})
+        // })
+
+        $('button').click(function(){
+            $('.children').parents().css({"color":"red", "border":"2px solid blue"})
+        })
+
+        
+    });
+</script>
+</html>
