@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js" integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+<style>
+    * {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-size: 16px;
+}
+
+ul li {
+  list-style: none;
+}
+
+.accordion {
+  width: 30%;
+  margin: 50px auto 0;
+}
+
+.accordion > li:first-child {
+  border: none;
+}
+
+.accordion > li {
+  position: relative;
+  border-top: 1px solid #2ea1de;
+}
+
+.accordion .link a {
+  position: relative;
+  display: block;
+  padding: 15px 20px;
+  color: #1b3746;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.accordion .active .link > a {
+  background: #1795d8;
+}
+
+.accordion .link > a {
+  background: #29a8ec;
+  color: #fff;
+}
+
+.accordion .link > a:hover {
+  background: #1795d8;
+}
+
+
+/* submenu */
+
+.submenu {
+  display: none;
+  background: #f8f9f9;
+}
+
+.accordion .submenu > li a {
+  display: block;
+  padding: 10px 15px;
+  text-decoration: none;
+  color: #8fa7b3;
+  cursor: pointer;
+}
+
+.accordion .submenu > li:first-child {
+  border: none;
+}
+
+.accordion .submenu > li {
+  border-top: 1px solid #dae0e0;
+}
+
+.accordion .submenu > li a:hover {
+  background: #e6ecec;
+  color: #1795d8;
+  padding: 10px 15px 10px 20px;
+  transition: padding 0.2s ease-in;
+}
+
+.fa {
+  position: absolute;
+  top: 50%;
+  right: 12px;
+  transform: translateY(-50%);
+}
+
+.active .fa {
+  transform: translateY(-50%) rotate(180deg);
+}
+</style>
+    
+
+<ul class="accordion">
+    <li>
+      <p class="link"><a href="#">Accordion01<i class="fa fa-toggle-down"></i></a></p>
+      <ul class="submenu">
+        <li><a href="#">Sub 1.1</a></li>
+      </ul>
+    </li>
+    <li>
+      <p class="link"><a href="#">Accordion02<i class="fa fa-toggle-down"></i></a></p>
+      <ul class="submenu">
+        <li><a href="#">Sub 2.1</a></li>
+        <li><a href="#">Sub 2.2</a></li>
+      </ul>
+    </li>
+
+  </ul>
+  
+</body>
+
+<script>
+    $(document).ready(function(){
+        $('.accordion li').click(function(){
+            $(this).toggleClass('active');
+            console.log('hello')
+            $(this).siblings().removeClass('active')
+            $('.submenu').stop().slideUp();
+            $('.active .submenu').stop().slideDown();
+            return false;
+        })
+    })
+</script>
+</html>

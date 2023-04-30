@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js" integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  background-color: #f5f5f5;
+  font-family: "source sans pro", sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+h1 {
+  padding: 20px;
+  text-align: center;
+  font-size: 40px;
+}
+
+.paragraph {
+  width: 70%;
+  margin: 0 auto;
+  padding: 20px;
+  font-size: 20px;
+  text-align: justify;
+}
+
+.toggle-btn {
+  position: fixed;
+  top: 40px;
+  right: 40px;
+  color: #f5f5f5;
+  background-color: #000000;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: 1px solid #000000;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.toggle-btn i {
+  padding-left: 10px;
+}
+
+body.change-background {
+  color: #f5f5f5;
+  background-color: #000000;
+}
+
+</style>
+<body>
+    <div class="container">
+        <h1>Light Mode/Dark Mode</h1>
+        <p class="paragraph">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia enim illum
+          neque est voluptate eius fuga at tenetur quibusdam, perferendis tempore
+          excepturi similique quaerat quos quae dolor nisi magni veritatis. Unde
+          minus debitis commodi perferendis qui, officia error omnis rerum
+          
+          
+        </p>
+        <button class="toggle-btn" id="toggle-btn">
+          <span>Dark Mode</span>
+        </button>
+      </div>
+</body>
+
+<script>
+    $(document).ready(function(){
+        $("#toggle-btn").click(function(){
+            $("body").toggleClass("change-background");
+            $(this).css("border","1px solid #f5f5f5");
+
+            $("span").text(
+                $("span").text()== "Light Mode" ? "Dark Mode" : "Light Mode"
+            )
+        })
+    })
+</script>
+</html>
