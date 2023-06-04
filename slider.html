@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js" integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .slider {
+        width: 500px;
+        height: 300px;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .slider img {
+        width: 500px;
+        height: 300px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0;
+        transition: opacity 1s ease;
+    }
+
+    .slider img.active {
+        opacity: 1;
+    }
+</style>
+<body>
+    <div class="slider">
+        <img src="https://res.klook.com/images/fl_lossy.progressive,q_65/c_fill,w_1295,h_720/w_80,x_15,y_15,g_south_west,l_Klook_water_br_trans_yhcmh3/activities/t9ur9cc1khkup1dmcbzd/IMGWorldsofAdventureTicketinDubai.jpg" alt="Image 1">
+        <img src="https://d2g4iwshf24scx.cloudfront.net/Tour-Images//false-4753//dubai-img-worlds-of-adventure-coaster.jpg" alt="Image 2">
+        <img src="https://res.klook.com/image/upload/c_fill,w_750,h_500/q_80/w_80,x_15,y_15,g_south_west,l_Klook_water_br_trans_yhcmh3/activities/ys5jqwvg6pgtpacb5kqb.jpg" alt="Image 3">
+      </div>
+      
+      <button class="prev">Previous</button>
+      <button class="next">Next</button>
+</body>
+
+<script>
+    $(document).ready(function(){
+        $('.slider img:first-child').addClass('active');
+
+        $('.next').on('click',function(){
+            var currentImg = $('.slider img.active');
+            var nextImg = currentImg.next();
+
+            if(nextImg.length === 0){
+                nextImg = $('.slider img:first-child')
+            }
+
+            currentImg.removeClass('active');
+            nextImg.addClass('active');
+        })
+
+        // Prev btn
+        $('.prev').on('click', function(){
+            var currentImg = $('.slider img.active');
+            var prevImg = currentImg.prev();
+
+            if(prevImg.length === 0){
+                prevImg = $('.slider img:last-child')
+            }
+
+            currentImg.removeClass('active');
+            prevImg.addClass('active')
+        })
+    })
+</script>
+
+</html>

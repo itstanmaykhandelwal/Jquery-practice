@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js" integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+   #container {
+  padding-left: 10vw;
+  padding-right: 10vw;
+  padding-top: 5vh;
+  padding-bottom: 20vh;
+}
+
+.tabs-nav ul {
+  margin: 0;
+  padding: 0;
+}
+
+.tabs-nav li {
+  display: inline-block;
+  background: rgba(0, 0, 0, 0.78);
+  color: #fefefe;
+  border-width: 1px 1px 0 1px;
+  border-style: solid;
+  border-color: #34495E;
+  margin-right: 5px;
+}
+
+.tabs-nav a {
+  display: block;
+  padding: 10px 15px;
+  font-weight: bold;
+  color: #fff;
+}
+/* Active tab */
+
+.tabs-nav li.active {
+  background: #FFF;
+  color: #000;
+}
+
+.tabs-nav li.active a {
+  color: inherit;
+}
+/* Tab content */
+
+.tabs-content {
+  border: 1px solid #34495E;
+  padding: 10px;
+  background: #FFF;
+  margin-top: -1px;
+  overflow: hidden;
+}
+
+.tabs-content IMG {
+  margin-right: 10px;
+}
+/* Hide all but first content div */
+
+.tabs-content div:not(:first-child) {
+  display: none;
+}
+</style>
+<body>
+    <div id="container">
+        <header class="tabs-nav">
+          <ul>
+            <li class="active"><a href="#tab1">One</a></li>
+            <li><a href="#tab2">Two</a></li>
+            <li><a href="#tab3">Three</a></li>
+            <li><a href="#tab4">Four</a></li>
+          </ul>
+        </header>
+      
+        <section class="tabs-content">
+          <div class="tabs-lyt" id="tab1">
+            <h3>First Tab</h3>
+            <p>Nothing wrong with washing your brush. Trees cover up a multitude of sins. Isn't that fantastic that you can make whole mountains in minutes? Have fun with it. It's hard to see things when you're too close. Take a step back and look. You could sit here for weeks with your one hair brush trying to do that - or you could do it with one stroke with an almighty brush.</p>
+          </div>
+          <div class="tabs-lyt" id="tab2">
+            <h3>Second Tab</h3>
+            <p>We don't have anything but happy trees here. See. We take the corner of the brush and let it play back-and-forth. You can work and carry-on and put lots of little happy things in here. Without washing the brush, I'm gonna go right into some Van Dyke Brown, some Burnt Umber, and a little bit of Sap Green. This is a fantastic little painting. The first step to doing anything is to believe you can do it. See it finished in your mind before you ever start.</p>
+          </div>
+      
+          <div class="tabs-lyt" id="tab3">
+            <h3>Third Tab</h3>
+            <p>Isn't that fantastic? You can just push a little tree out of your brush like that. Happy painting, God bless. You better get your coat out, this is going to be a cold painting. And right there you got an almighty cloud. A fan brush can be your best friend. Look at them little rascals.</p>
+          </div>
+      
+          <div class="tabs-lyt" id="tab4">
+            <h3>Fourth Tab</h3>
+            <p>Just go out and talk to a tree. Make friends with it. For the lack of a better word I call them hangy downs. There's nothing wrong with having a tree as a friend. Maybe there's a happy little waterfall happening over here. I think there's an artist hidden in the bottom of every single one of us. So often we avoid running water, and running water is a lot of fun.</p>
+          </div>
+        </section>
+      </div>
+</body>
+
+<script>
+    $(document).ready(function(){
+        $('.tabs-nav a').click(function(){
+            $('.tabs-nav li').removeClass('active');
+            console.log('helo')
+            $(this).parent().addClass('active');
+
+            var currentTab = $(this).attr('href');
+            $('.tabs-content .tabs-lyt').hide();
+            $(currentTab).show();
+
+            return false;
+        })
+    })
+</script>
+</html>
